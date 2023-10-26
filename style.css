@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  width: 100%;
+ 
+}
+
+main {
+  flex-grow: 1;
+}
+
+.main-content {
+    display: flex;
+   /* Allow wrapping to the next line on small screens */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text within the container */
+  transition: margin-left 0.3s;
+  margin-left: 0;
+  overflow-y:hidden;
+  }
+
+html {
+  background-image: url('https://i.imgur.com/5oyWn29.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+/* Style the header */
+header {
+  background: #0F0F0F;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  /* Center the text horizontally */
+}
+
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+
+}
+
+.hamburger {
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.bar {
+  width: 18px;
+  height: 1.5px;
+  background-color: white;
+  margin: 4px;
+  transition: 0.4s;
+}
+
+
+/* Style the main menu */
+.main-menu {
+
+  width: 10px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  transition: 0.3s;
+  overflow-y: auto;
+ 
+}
+
+.list-menu {
+  list-style: none;
+  width: 30%;
+  border-radius: 20%;
+  margin-top: 60px;
+
+}
+
+.list-menu li a {
+  font-size: 20px;
+  
+
+}
+
+.list-menu a {
+
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: bold;
+  font-size: 10px;
+
+}
+
+.list-menu li {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item {
+  display: inline-block;
+  position: relative;
+}
+
+.menu-item:hover::before {
+  content: "";
+  /* Add content for the ::before pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Make it cover the entire menu item */
+  height: 100%;
+  /* Make it cover the entire menu item */
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 50px;
+  z-index: -1;
+
+}
+
+
+.menu-item a {
+  text-decoration: none;
+  color: #2a2a2a;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+}
+
+.menu-item:active {
+  background-color: #545454;
+  opacity: 0.9;
+  transition: background-color 0.2s, opacity 0.3s;
+  border-radius: 50px;
+}
+
+
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 2s ease;
+  transform-origin: center;
+  margin-bottom: 50px;
+  margin-top: 70px;
+  margin-left: 120px;
+  color: #282424;
+  max-width: 80%;
+  
+
+  
+}
+
+h1:hover {
+  transform: scale(1.1) translateX(0%);
+
+
+}
+
+
+h1:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+h1:hover::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  /* Hide overflowing content */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+.menu-open .main-content {
+  margin-left: 70px;
+ left: 0;
+  
+}
+
+
+
+.julian-avatar {
+  width: 250px; /* Set the desired width of the image */
+  height: 200px; /* Set the desired height of the image */
+  object-fit: contain; /* Maintain aspect ratio, fit within container */
+  max-width: 100%; /* Limit width to container width */
+  max-height: 100%; /* Limit height to container height */
+  margin-left: 20px; /* Add a margin to separate the h1 and avatar */
+  margin-bottom: 200px;
+  margin-top: 0;
+}
+
+
+
+
+/* Add a CSS class for the pulse animation */
+.pulse {
+  animation: pulse 0.5s ease infinite;
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    /* Start with the default size */
+    opacity: 1;
+    /* Start fully opaque */
+  }
+
+  50% {
+    transform: scale(1.1);
+    /* Slightly scale up at 50% */
+    opacity: 0.8;
+    /* Reduce opacity at 50% */
+  }
+
+  100% {
+    transform: scale(1);
+    /* Return to default size at 100% */
+    opacity: 1;
+    /* Fully opaque at 100% */
+  }
+}
+
+
+footer {
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+}
+
+
+.footer-links a {
+  text-decoration: none;
+}
+
+
+.footer-social i {
+  color: #ffffff;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 12px;
+
+
+}
+
+
+nav {
+  position: static;
+}
+
+nav ul {
+  position: absolute;
+  height: 100%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  h1 {
+   
+    margin-bottom: -20px;
+    text-align: center;
+    margin: 20px auto 0 auto; /* Center the h1 in the horizontal axis */
+    max-width: 80%;
+  }
+
+  .main-content {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  align-items: center;
+  }
+
+  .julian-avatar {
+      margin-left: auto; /* Center the avatar horizontally on small screens */
+      margin-right: auto;
+      margin-top: 50px;
+    margin-bottom: 50px;
+    }
+  }
+
+
+@media screen and (min-width: 768px) {
+  .main-content {
+    display: flex;
+    flex-direction: row; /* Display the h1 and avatar side by side */
+  }
+
+  .julian-avatar {
+    margin: 0 20px; /* Add margin to separate h1 and avatar */
+  }
+
+}
