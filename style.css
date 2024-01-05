@@ -485,9 +485,9 @@ a {
 #portfolio-one,
 #portfolio-two,
 #portfolio-three,
-#portfolio-four {
-
-
+#portfolio-four,
+#portfolio-five,
+#portfolio-six {
   width: 200px;
   height: 190px;
   object-fit: cover;
@@ -500,7 +500,10 @@ a {
 #portfolio-one:hover,
 #portfolio-two:hover,
 #portfolio-three:hover,
-#portfolio-four:hover {
+#portfolio-four:hover,
+#portfolio-five:hover,
+#portfolio-six:hover
+{
 
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
   color: #7d7d7d;
